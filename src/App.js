@@ -10,9 +10,11 @@ function App() {
     <div className="App">
       <div className = 'header'> React UbiTV Tutorial</div>
 			<Clock />
+      <h3> { value } </h3>
       <input 
-        value = { value }>
-      </input>
+        value = { value }
+        onChange = { event => setValue(event.target.value) }        
+      />  
     </div>
   );
 }
