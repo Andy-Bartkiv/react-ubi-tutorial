@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Clock from "./components/Clock";
+import PostItem from "./components/PostItem";
 import './styles/App.css';
 
 function App() {
@@ -8,19 +9,19 @@ function App() {
 
   return (
     <div className="App">
-      <div className = 'App-header'> React UbiTV Tutorial</div>
-			<Clock />
+      <div className = 'App-header'>
+        <h2>React UbiTV Tutorial</h2>
+			  <Clock />
+      </div>
       <h3> { value } </h3>
       <input 
         value = { value }
         onChange = { event => setValue(event.target.value) }        
       />
-      <div className = 'post'>
-        <div className = 'post_content'>
-          <strong>1. Javascript</strong>
-          <div>JavaScript is a programmning language of the web</div>
-        </div>
-      </div>
+      <PostItem />
+      <PostItem />
+      <PostItem />
+
     </div>
   );
 }

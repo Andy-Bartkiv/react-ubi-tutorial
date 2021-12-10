@@ -1,27 +1,57 @@
-body {
+* {
 	margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+#root{
+  display: flex;
+  justify-content: center;
+}
+
+body {
 	font-family: Arial, Helvetica, sans-serif;
   font-size: calc(10px + 2vmin);
 }
 
 .App {
-    background-color: #282c34;
-    text-align: center;
-    min-height: 100vh;
-    color: white;
-  }
+  background-color: #282c34;
+  /* text-align: center; */
+  min-height: 100vh;
+  width: 100%;
+  color: white;
+}
   
-  .App-header {
-    padding-top: .5em;
-    background-color: #282c34;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+.App-header {
+  padding: .5em 0;
+  background-color: #282c44;
+  color: orange;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: .1em solid orange;
+  border-radius: 1em;
+}
+
+h2 {
+  padding-left: 25%;
+}
+
+input {
+  margin-bottom: 0.5em;
+}
   
+.post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .25em;
+  border: 0.1em solid teal;
+  border-radius: .25em;
+  margin-top: .5em;
+}
+
 /*  li {
     text-align: start;
   }
