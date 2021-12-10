@@ -8,13 +8,19 @@ function App() {
 
   return (
     <div className="App">
-      <div className = 'header'> React UbiTV Tutorial</div>
+      <div className = 'App-header'> React UbiTV Tutorial</div>
 			<Clock />
       <h3> { value } </h3>
       <input 
         value = { value }
         onChange = { event => setValue(event.target.value) }        
-      />  
+      />
+      <div className = 'post'>
+        <div className = 'post_content'>
+          <strong>1. Javascript</strong>
+          <div>JavaScript is a programmning language of the web</div>
+        </div>
+      </div>
     </div>
   );
 }
