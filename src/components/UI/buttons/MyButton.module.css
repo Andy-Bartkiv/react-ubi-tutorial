@@ -1,0 +1,17 @@
+.my_btn {
+    padding: .25em;
+    color: teal;
+    background: transparent;
+    border: .1em solid teal;
+    border-radius: .25em;
+    cursor: pointer;
+}
+
+.my_btn:hover {
+    box-shadow: inset 0 0 1em teal;
+}
+
+.my_btn:active {
+    background: teal;
+    color: #282c44;    
+}
