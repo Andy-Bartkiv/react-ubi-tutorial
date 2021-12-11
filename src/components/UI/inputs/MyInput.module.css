@@ -1,6 +1,7 @@
 .my_input {
     width: 100%;
     padding: .25em;
-    border: .1em solid teal;
-    color: teal;
+    border: .1em solid #008080;
+    color: orange;
+    background: #282c44;
 }
