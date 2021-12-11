@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Clock from "./components/Clock";
 import PostList from "./components/PostList";
-import MyButton from "./components/UI/buttons/MyButton";
-import MyInput from "./components/UI/inputs/MyInput";
+import PostForm from "./components/PostForm";
 import './styles/App.css';
 
 function App() {
@@ -10,24 +9,16 @@ function App() {
   const [posts, setPosts] = useState([
     {id: 1, title: 'JavaScript 1', body: 'description 1'},
     {id: 2, title: 'JavaScript 2', body: 'description 2'},
-    {id: 3, title: 'JavaScript 3', body: 'description 3'}
   ]);
 
-  const [inputTitle, setInputTitle] = useState('');
-  const [inputBody, setInputBody] = useState('');
-
-  function addNewPost(event) {
-    event.preventDefault();
-    const newPost = {
-      id: Date.now(), 
-      title: inputTitle,
-      body: inputBody
-    }
+  const addPostFromForm = (newPost) => {
     setPosts([...posts, newPost]);
-    setInputTitle('');
-    setInputBody('');
-    console.log(newPost);
-  };
+  }
+
+  const deletePost = (delPost) => {
+    setPosts(posts.filter((post) => 
+      post.id !== delPost.id));
+  }
 
   return (
     <div className="App">
@@ -38,22 +29,8 @@ function App() {
       </div>
       
       <div className='App-body'>
-        <form>
-          <MyInput 
-            type="text" 
-            placeholder="Post Title" 
-            value={ inputTitle } 
-            onChange= { e => setInputTitle(e.target.value)}
-          />
-          <MyInput 
-            type="text" 
-            placeholder="Post Description" 
-            value={ inputBody } 
-            onChange= { e => setInputBody(e.target.value)}
-          />
-          <MyButton onClick = {addNewPost}>Create Post</MyButton>
-        </form>
-        <PostList posts = {posts} listTitle = {'Post List #1'} />
+        <PostForm addPost = { addPostFromForm }/>
+        <PostList deletePost = {deletePost} posts = { posts } listTitle = {'Post List #1'} />
       </div>
 
     </div>
