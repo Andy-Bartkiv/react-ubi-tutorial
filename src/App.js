@@ -41,11 +41,10 @@ function App() {
     return (filter.search)
     ? sortedPosts.filter(post => post.title.toLowerCase().includes(filter.search) || post.body.toLowerCase().includes(filter.search))
     : sortedPosts
-  }, [filter.search, sortedPosts])
+  }, [filter.search, sortedPosts]);
 
   // modal visibility
-  const [modal, setModal] = useState(false)
-
+  const [modal, setModal] = useState(false);
 
   return (
     <div className="App">
