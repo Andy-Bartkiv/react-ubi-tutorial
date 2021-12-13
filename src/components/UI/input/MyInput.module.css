@@ -5,3 +5,8 @@
     color: orange;
     background: #282c44;
 }
+
+.my_input:focus {
+    border: .1em solid #ffa500cc;
+    outline: none;
+}

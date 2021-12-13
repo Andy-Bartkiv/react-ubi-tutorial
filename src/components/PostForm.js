@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import MyInput from "./UI/inputs/MyInput";
-import MyButton from "./UI/buttons/MyButton";
+import MyInput from "./UI/input/MyInput";
+import MyButton from "./UI/button/MyButton";
+import '../styles/PostForm.css'
 
 function PostForm(props) {
 
@@ -17,7 +18,7 @@ function PostForm(props) {
     }
     
     return (
-      <form>
+      <form className="post_form">
         <MyInput 
 					type="text" 
 					placeholder="Post Title" 

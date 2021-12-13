@@ -1,4 +1,10 @@
 .my_select {
     background: #282c44;
     color: #ffa500cc;
+    border: .1em solid #008080;
+}
+
+.my_select:focus {
+    border: .1em solid #ffa500cc;
+    outline: none;
 }

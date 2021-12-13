@@ -10,7 +10,6 @@
 
 .my_btn:hover {
     --prm-color: orange;
-    /* box-shadow: inset 0 0 1em teal; */
 }
 
 .my_btn:active {
