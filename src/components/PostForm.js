@@ -19,17 +19,17 @@ function PostForm(props) {
     
     return (
       <form className="post_form">
-        <MyInput 
-					type="text" 
-					placeholder="Post Title" 
-					value={ post.title } 
-					onChange= { e => setPost({...post, title: e.target.value})}
+        <MyInput
+			type="text" 
+			placeholder="Post Title" 
+			value={ post.title } 
+			onChange= { e => setPost({...post, title: e.target.value})}
         />
         <MyInput 
-					type="text" 
-					placeholder="Post Description" 
-					value={ post.body } 
-					onChange= { e => setPost({...post, body: e.target.value})}
+			type="text" 
+			placeholder="Post Description" 
+			value={ post.body } 
+			onChange= { e => setPost({...post, body: e.target.value})}
         />
         <MyButton onClick = {addNewPost}>Create Post</MyButton>
       </form>

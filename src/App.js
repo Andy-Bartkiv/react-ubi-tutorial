@@ -6,6 +6,7 @@ import PostFilter from "./components/PostFilter";
 import MyModal from "./components/UI/modal/MyModal"
 import MyButton from "./components/UI/button/MyButton";
 import './styles/App.css';
+import { usePosts } from "./hooks/usePost";
 
 function App() {
 
@@ -30,18 +31,7 @@ function App() {
   
   // filter and sort
   const [filter, setFilter] = useState( {sort: '', search: ''} );
- 
-  const sortedPosts = useMemo( () => {
-    return (filter.sort)
-      ? [...posts].sort((a,b) => a[filter.sort].localeCompare(b[filter.sort]))
-      : posts
-  }, [filter.sort, posts]);
- 
-  const sortedAndSearchedPosts = useMemo( () => {
-    return (filter.search)
-    ? sortedPosts.filter(post => post.title.toLowerCase().includes(filter.search) || post.body.toLowerCase().includes(filter.search))
-    : sortedPosts
-  }, [filter.search, sortedPosts]);
+  const sortedAndSearchedPosts = usePosts(posts, filter);
 
   // modal visibility
   const [modal, setModal] = useState(false);
@@ -66,11 +56,11 @@ function App() {
         >
           <PostForm addPost = { addPostFromForm }/>
         </MyModal>
-        <hr style = { {margin: '.5em 0', background: 'teal', border: 'none', height: '.05em'} }/>
         <PostFilter 
           filter = { filter }
           setFilter = { setFilter }
         />
+        <hr style = { {margin: '.5em 0', background: 'orange', border: 'none', height: '.025em'} }/>
         <PostList 
           posts = { sortedAndSearchedPosts } 
           deletePost = { deletePost } 
