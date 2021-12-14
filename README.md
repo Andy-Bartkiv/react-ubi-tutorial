@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# <b>React JS</b> - Fundamentals from Ulbi TV.
+### https://www.youtube.com/watch?v=GNrdg3PzpJQ
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Основные концепции и разработка функционала, который встречается в каждом приложении.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+01. Компонент App. Работа с состоянием. UseState
+02. Управляемый инпут
+03. Первый функциональный компонент
+04. Первый классовый компонент
+05. Что такое хуки? useState, useEffect
+06. Стили. CSS. Классы
+07. Props. Аргументы компонента. 
+08. Работы со списками. Преобразование массива объектов в массив React элементов
+09. Форма создания поста. Управляемые и неуправляемые компоненты
+10. Создание UI библиотеки. Первые компоненты. CSS модули. Пропс children
+11. Предотвращаем обновление страницы при submit формы
+12. хук useRef. Доступ к DOM элементу. Неуправляемый компонент
+13. React Devtools. Инструменты разработчика React
+14. Обмен данными между компонентами. От родителя к ребенку. От ребенка к родителю.
+15. Отрисовка по условию
+16. Сортировка. Выпадающий список
+17. Поиск. Фильтрация.
+18. useMemo. Мемоизация. Кеширование
+19. Модальное окно. Переиспользуемый UI компонент
+20. Анимации. React transition group
+21. Декомпозиция. Кастомные хуки
+- Работа с сервером. Axios
+- Жизненный цикл компонента. useEffect
+- API. PostService
+- Индикация загрузки данных с сервера
+- Компонент Loader. Анимации
+- Кастомный хук useFetching(). Обработка ошибок
+- Постраничный вывод. Пагинация (pagination)
+- Обьяснение механизма изменения состояния
+- React router. Постраничная навигация. BrowserRouter, Route, Switch, Redirect
+- Динамическая навигация. useHistory, useParams
+- Загрузка комментариев к посту
+- Улучшаем навигацию. Приватные и публичные маршруты
+- useContext. Глобальные данные. Авторизация пользователя
+- Бесконечная лента. Динамическая пагинация. useObserver

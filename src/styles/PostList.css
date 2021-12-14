@@ -1,0 +1,37 @@
+.post_list {
+    margin-top: .5em;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.post {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .25em;
+    border: 0.1em solid teal;
+    border-radius: .25em;
+    font-size: smaller;
+  }
+
+/* React Group Transitions */
+.post-enter {
+    opacity: 0.25;
+    transform: translateX(-100%);
+    transition: all 500ms ease-in;
+  }
+.post-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 500ms ease-in;
+}
+.post-exit {
+    opacity: 1;
+    transition: all 500ms ease-in;
+}
+.post-exit-active {
+    opacity: 0.25;
+    transform: translateX(-100%);
+    transition: all 500ms ease-in;
+  }

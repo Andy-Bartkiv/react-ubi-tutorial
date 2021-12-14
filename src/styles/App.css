@@ -34,9 +34,9 @@ body {
   margin-bottom: .5em;
 }
 
-.App-header h2 {
-  /* padding-left: 25%; */
-}
+/* .App-header h2 {
+  padding-left: 25%;
+} */
 
 .App-body {
   padding: 0 1em;
@@ -48,36 +48,4 @@ h2 {
 
 input {
   margin-bottom: 0.5em;
-}
-  
-.post {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: .25em;
-  border: 0.1em solid teal;
-  border-radius: .25em;
-  margin-top: .5em;
-  font-size: smaller;
-}
-
-/* React Group Transitions */
-.item-enter {
-  opacity: 0.25;
-  transform: translateX(-100%);
-  transition: all 500ms ease-in;
-}
-.item-enter-active {
-  opacity: 1;
-  transform: translateX(0);
-  transition: all 500ms ease-in;
-}
-.item-exit {
-  opacity: 1;
-  transition: all 500ms ease-in;
-}
-.item-exit-active {
-  opacity: 0.25;
-  transform: translateX(-100%);
-  transition: all 500ms ease-in;
 }

@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import Clock from "./components/Clock";
 import PostList from "./components/PostList";
 import PostForm from "./components/PostForm";
@@ -14,9 +14,9 @@ function App() {
 
   // post list manipulations
   const [posts, setPosts] = useState([
-    {id: 1, title: 'JavaScript 1', body: 'c-description 1'},
-    {id: 2, title: 'aJavaScript 2', body: 'b-description 2'},
-    {id: 3, title: 'bJavaScript 3', body: 'a-description 3'},
+    {id: 1, title: 'JavaScript', body: 'c-23 Lorem ipsum dolor sit amet'},
+    {id: 2, title: 'b-JavaScript', body: 'b-13 Lorem ipsum dolor sit amet'},
+    {id: 3, title: 'c-JavaScript', body: 'a-12 Lorem ipsum dolor sit amet'},
   ]);
 
   const addPostFromForm = (newPost) => {
@@ -45,7 +45,7 @@ function App() {
           onClick = { () => setModal(true) }>
           Create New Post
         </MyButton>
-        <h2>React UbiTV-Tutorial</h2>
+        <h2>React UlbiTV Tutorial</h2>
 			  <Clock />
       </div>
       
