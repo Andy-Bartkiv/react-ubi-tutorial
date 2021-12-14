@@ -18,7 +18,7 @@
     animation: spin 2.5s linear infinite;
 }
 
-span {
+.loader span {
     color: orange;
     font-size: .75em;
     animation: spin 2.5s linear infinite reverse;

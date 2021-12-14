@@ -1,19 +1,29 @@
 .post_list {
-    margin-top: .5em;
-    display: flex;
-    flex-direction: column;
-    gap: .5em;
+  margin-top: .5em;
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
 }
 
 .post {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: .25em;
-    border: 0.1em solid teal;
-    border-radius: .25em;
-    font-size: smaller;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .25em;
+  border: 0.1em solid teal;
+  border-radius: .25em;
+  font-size: smaller;
+}
+
+.post_title {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.highlighter {
+  background-color: orange;
+  color: #282c44;
+}
 
 /* React Group Transitions */
 .post-enter {
@@ -34,4 +44,4 @@
     opacity: 0.25;
     transform: translateX(-100%);
     transition: all 500ms ease-in;
-  }
+}

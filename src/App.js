@@ -18,7 +18,7 @@ function App() {
   const [posts, setPosts] = useState([
     // {title: '123', body: 'qwer <mark> sakjksldfj </mark>'}
   ]);
-  // Post Loading Animation
+  // Post Loader Animation
   const [postloading, setPostLoading] = useState(false);
 
   useEffect( () => {
@@ -31,7 +31,7 @@ function App() {
       const posts = await PostService.getAll();
       setPosts(posts);
       setPostLoading(false);
-    }, 2500)
+    }, 1500)
   }
 
   const addPostFromForm = (newPost) => {
@@ -71,15 +71,18 @@ function App() {
         >
           <PostForm addPost = { addPostFromForm }/>
         </MyModal>
+        
         <PostFilter 
           filter = { filter }
           setFilter = { setFilter }
         />
+        
         <hr style = { {margin: '.5em 0', background: 'orange', border: 'none', height: '.025em'} }/>
-        {postloading
+        { postloading
           ? <Loader />
           : <PostList 
               posts = { sortedAndSearchedPosts } 
+              highlight = { filter.search }
               deletePost = { deletePost } 
             />
         }
