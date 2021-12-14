@@ -1,0 +1,31 @@
+.container { 
+    width: 100%;
+    margin-top: .5em;
+    display: flex;
+    justify-content: center;
+    gap: .5em;
+}
+
+.loader {
+    width: 15vmin;
+    height: 15vmin;
+    border: .5em solid teal; /* Light grey */
+    border-top: .5em solid orange; /* Blue */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .75em;
+    animation: spin 2.5s linear infinite;
+}
+
+span {
+    color: orange;
+    font-size: .75em;
+    animation: spin 2.5s linear infinite reverse;
+}
+
+@keyframes spin{
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

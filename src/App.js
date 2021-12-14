@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Clock from "./components/Clock";
+import Loader from "./components/UI/loader/Loader";
 import PostList from "./components/PostList";
 import PostForm from "./components/PostForm";
 import PostFilter from "./components/PostFilter";
@@ -28,7 +29,7 @@ function App() {
       const posts = await PostService.getAll();
       setPosts(posts);
       setPostLoading(false);
-    }, 1000)
+    }, 2500)
   }
 
   const addPostFromForm = (newPost) => {
@@ -74,7 +75,7 @@ function App() {
         />
         <hr style = { {margin: '.5em 0', background: 'orange', border: 'none', height: '.025em'} }/>
         {postloading
-          ? <h2>Post Are Loarding...</h2>
+          ? <Loader />
           : <PostList 
               posts = { sortedAndSearchedPosts } 
               deletePost = { deletePost } 
