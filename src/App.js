@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Clock from "./components/Clock";
 import PostList from "./components/PostList";
 import PostForm from "./components/PostForm";
@@ -7,17 +7,29 @@ import MyModal from "./components/UI/modal/MyModal"
 import MyButton from "./components/UI/button/MyButton";
 import './styles/App.css';
 import { usePosts } from "./hooks/usePost";
+import PostService from "./API/PostService";
 
 function App() {
 
   const log = console.log;
 
   // post list manipulations
-  const [posts, setPosts] = useState([
-    {id: 1, title: 'JavaScript', body: 'c-23 Lorem ipsum dolor sit amet'},
-    {id: 2, title: 'b-JavaScript', body: 'b-13 Lorem ipsum dolor sit amet'},
-    {id: 3, title: 'c-JavaScript', body: 'a-12 Lorem ipsum dolor sit amet'},
-  ]);
+  const [posts, setPosts] = useState([]);
+  // Post Loading Animation
+  const [postloading, setPostLoading] = useState(false);
+
+  useEffect( () => {
+    fetchPosts();
+  }, []);
+  
+  async function fetchPosts() {
+    setPostLoading(true);
+    setTimeout( async() => {
+      const posts = await PostService.getAll();
+      setPosts(posts);
+      setPostLoading(false);
+    }, 1000)
+  }
 
   const addPostFromForm = (newPost) => {
     setPosts([...posts, newPost]);
@@ -61,10 +73,13 @@ function App() {
           setFilter = { setFilter }
         />
         <hr style = { {margin: '.5em 0', background: 'orange', border: 'none', height: '.025em'} }/>
-        <PostList 
-          posts = { sortedAndSearchedPosts } 
-          deletePost = { deletePost } 
-        />
+        {postloading
+          ? <h2>Post Are Loarding...</h2>
+          : <PostList 
+              posts = { sortedAndSearchedPosts } 
+              deletePost = { deletePost } 
+            />
+        }
       </div>
 
     </div>
