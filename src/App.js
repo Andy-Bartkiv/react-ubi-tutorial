@@ -8,32 +8,26 @@ import MyModal from "./components/UI/modal/MyModal"
 import MyButton from "./components/UI/button/MyButton";
 import './styles/App.css';
 import { usePosts } from "./hooks/usePost";
+import { useFetch } from "./hooks/useFetch";
 import PostService from "./API/PostService";
 
 function App() {
-
-  const log = console.log;
 
   // post list manipulations
   const [posts, setPosts] = useState([
     // {title: '123', body: 'qwer <mark> sakjksldfj </mark>'}
   ]);
-  // Post Loader Animation
-  const [postloading, setPostLoading] = useState(false);
+  const [fetchPosts, isPostsLoading, loadingError] = useFetch( async () => {
+    // setTimeout( async() => {
+      const posts = await PostService.getAll();
+      setPosts(posts);
+    // }, 1500)
+  });
 
   useEffect( () => {
     fetchPosts();
   }, []);
   
-  async function fetchPosts() {
-    setPostLoading(true);
-    setTimeout( async() => {
-      const posts = await PostService.getAll();
-      setPosts(posts);
-      setPostLoading(false);
-    }, 1500)
-  }
-
   const addPostFromForm = (newPost) => {
     setPosts([...posts, newPost]);
     setModal(false);
@@ -78,7 +72,11 @@ function App() {
         />
         
         <hr style = { {margin: '.5em 0', background: 'orange', border: 'none', height: '.025em'} }/>
-        { postloading
+        { loadingError &&
+          <h3 style={{color: 'orangered'}} >Error: {loadingError}</h3>
+        }
+        
+        { isPostsLoading
           ? <Loader />
           : <PostList 
               posts = { sortedAndSearchedPosts } 
