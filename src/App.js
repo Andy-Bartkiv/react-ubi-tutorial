@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Clock from "./components/Clock";
+import Clock from "./components/UI/clock/Clock";
 import Loader from "./components/UI/loader/Loader";
 import PostList from "./components/PostList";
 import PostForm from "./components/PostForm";
@@ -15,7 +15,9 @@ function App() {
   const log = console.log;
 
   // post list manipulations
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState([
+    // {title: '123', body: 'qwer <mark> sakjksldfj </mark>'}
+  ]);
   // Post Loading Animation
   const [postloading, setPostLoading] = useState(false);
 

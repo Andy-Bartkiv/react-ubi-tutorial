@@ -7,11 +7,10 @@
 }
 
 .loader {
-    width: 15vmin;
-    height: 15vmin;
-    border: .5em solid teal; /* Light grey */
-    border-top: .5em solid orange; /* Blue */
+    width: 15vmin; height: 15vmin;
     border-radius: 50%;
+    border: .5em solid teal;
+    border-top: .5em solid orange;
     display: flex;
     justify-content: center;
     align-items: center;
