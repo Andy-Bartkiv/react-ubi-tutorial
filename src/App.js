@@ -14,19 +14,14 @@ import PostService from "./API/PostService";
 function App() {
 
   // post list manipulations
-  const [posts, setPosts] = useState([
-    // {title: '123', body: 'qwer <mark> sakjksldfj </mark>'}
-  ]);
+  const [posts, setPosts] = useState([]);
   const [fetchPosts, isPostsLoading, loadingError] = useFetch( async () => {
-    // setTimeout( async() => {
-      const posts = await PostService.getAll();
-      setPosts(posts);
-    // }, 1500)
+      const resonse = await PostService.getAll();
+      setPosts(resonse.data);
+      console.log(resonse.headers);
   });
 
-  useEffect( () => {
-    fetchPosts();
-  }, []);
+  useEffect( () => fetchPosts(), []);
   
   const addPostFromForm = (newPost) => {
     setPosts([...posts, newPost]);
