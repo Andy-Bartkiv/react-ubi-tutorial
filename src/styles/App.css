@@ -22,20 +22,62 @@ body {
 }
   
 .App-header {
+  --prm-color: #088;
+  --sec-color: orange;
   padding: .5em 0;
   background-color: #282c44;
-  color: orange;
+  color: var(--sec-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: .1em solid orange;
+  border-bottom: .1em solid var(--sec-color);
   border-radius: 1em;
+  /* margin-bottom: .25em; */
+}
+
+.App-navbar {
+  --prm-color: #088;
+  --sec-color: orange;
+  padding: 0 1em;
+  list-style-type: none;
+  overflow: hidden;
+  display: flex;
+  justify-content: right;
+  align-items: center;
   margin-bottom: .25em;
 }
 
-/* .App-header h2 {
-  padding-left: 25%;
-} */
+.App-navbar li {
+  width: 20%;
+  font-size: .75em;
+  transition: .25s;
+  background-color: #282c34;
+  border-radius: .5em;
+  border-bottom: .1em solid var(--prm-color);
+}
+
+.App-navbar a {
+  display: block;
+  color: var(--prm-color);
+  text-align: center;
+  padding: .25em 1em;
+  text-decoration: none;
+}
+
+.App-navbar li:hover {
+  --prm-color: orange;
+  width: 1.1;
+  /* color: #088; */
+  /* background: linear-gradient(#ffa50000, #ffa50022); */
+}
+
+.App-navbar .active {
+  /* --prm-color: orange; */
+  width: 80%;
+  background-color: #282c44;
+  /* border-bottom: .1em solid var(--prm-color); */
+  /* text-shadow: 0 0 .5em var(--prm-color); */
+}
 
 .App-body {
   padding: 0 1em;
@@ -45,29 +87,10 @@ h1, h2, h3 {
   text-align: center;
 }
 
-/* input {
-  margin-bottom: 0.5em;
-} */
-
 .post_filter {
   padding: .25em 0;
   display: flex;
   justify-content: center;
   align-items: stretch;
   gap: 1em;
-}
-
-.pages {
-  padding: .25em 0;
-  display: flex;
-  justify-content: center;
-  gap: .25em;
-}
-
-.pages > * { width: 2em; }
-
-.page_current {
-  --prm-color: orange;
-  font-weight: 700;
-  box-shadow: inset 0 0 .25em .125em var(--prm-color);
 }

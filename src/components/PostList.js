@@ -10,7 +10,7 @@ const PostList = ({ posts, highlight, deletePost }) => {
 		: 'No Posts to Show';
 	return (
 		<div>
-			<h2>{ listTitle }</h2>
+			<h3>{ listTitle }</h3>
 			<TransitionGroup className = 'post_list'>
 				{ posts.map((post, index) => (
 					<CSSTransition

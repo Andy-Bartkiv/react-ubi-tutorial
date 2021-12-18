@@ -6,7 +6,7 @@
 }
 
 .modal_content {
-    padding: 1em;
+    padding: .75em;
     border: .1em solid orange;
     border-radius: .5em;
     background: #282c44;

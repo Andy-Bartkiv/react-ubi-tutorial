@@ -1,0 +1,15 @@
+.pages {
+    padding: .25em 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .25em;
+  }
+  
+  .pages > * { width: 2em; }
+  
+  .page_current {
+    --prm-color: orange;
+    font-weight: 700;
+    box-shadow: inset 0 0 .25em .125em var(--prm-color);
+  }
