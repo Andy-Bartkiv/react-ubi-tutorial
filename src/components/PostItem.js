@@ -12,7 +12,7 @@ const PostItem = ( {number, post, highlight, deletePost} ) => {
 					highlightClassName="highlighter"
 					searchWords = { [highlight] }
 					autoEscape = { true }
-					textToHighlight = { `${number}. ${post.title}` }
+					textToHighlight = { `${post.id}. ${post.title}` }
   				/>
 				<br/>
 				<Highlighter

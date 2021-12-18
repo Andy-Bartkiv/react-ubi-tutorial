@@ -1,5 +1,7 @@
 .my_btn {
     --prm-color: teal;
+    --sec-color: orange;
+    --trt-color: #282c44;
     padding: .25em;
     color: var(--prm-color);
     background: transparent;
@@ -13,7 +15,7 @@
 }
 
 .my_btn:active {
-    box-shadow: 0 0 1em orange;
-    background-color: orange;
-    color: #282c44;
+    box-shadow: 0 0 1em var(--sec-color);
+    background-color: var(--sec-color);
+    color: var(--trt-color);
 }

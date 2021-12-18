@@ -10,18 +10,26 @@ import './styles/App.css';
 import { usePosts } from "./hooks/usePost";
 import { useFetch } from "./hooks/useFetch";
 import PostService from "./API/PostService";
+import Pagination from "./components/UI/pagination/Pagination";
+import { getPagesQty, getPagesArray } from "./utils/pages";
 
 function App() {
-
-  // post list manipulations
+  
   const [posts, setPosts] = useState([]);
+  const [filter, setFilter] = useState( {sort: '', search: ''} );
+  const [modal, setModal] = useState(false);
+  const [totalPages, setTotalPages] = useState(10);
+  const [limit, setLimit] = useState(10);
+  const [page, setPage] = useState(1);
+
+
   const [fetchPosts, isPostsLoading, loadingError] = useFetch( async () => {
-      const resonse = await PostService.getAll();
+      const resonse = await PostService.getAll(limit, page);
       setPosts(resonse.data);
-      console.log(resonse.headers);
+      setTotalPages(getPagesQty(resonse.headers['x-total-count'], limit));
   });
 
-  useEffect( () => fetchPosts(), []);
+  useEffect( () => fetchPosts(), [page]);
   
   const addPostFromForm = (newPost) => {
     setPosts([...posts, newPost]);
@@ -34,11 +42,11 @@ function App() {
   };
   
   // filter and sort
-  const [filter, setFilter] = useState( {sort: '', search: ''} );
   const sortedAndSearchedPosts = usePosts(posts, filter);
 
-  // modal visibility
-  const [modal, setModal] = useState(false);
+  const changePage = (p) => {
+    setPage(p);
+  }
 
   return (
     <div className="App">
@@ -65,8 +73,14 @@ function App() {
           filter = { filter }
           setFilter = { setFilter }
         />
-        
-        <hr style = { {margin: '.5em 0', background: 'orange', border: 'none', height: '.025em'} }/>
+
+        <Pagination 
+          page = { page }
+          totalPages = { totalPages }
+          changePage = { changePage }
+        />
+
+        <hr style = { {margin: '.25em 0', background: 'orange', border: 'none', height: '.025em'} }/>
         { loadingError &&
           <h3 style={{color: 'orangered'}} >Error: {loadingError}</h3>
         }
