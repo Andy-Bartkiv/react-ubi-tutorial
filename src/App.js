@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import About from './pages/About';
-import Posts from './pages/Posts';
-import Header from './components/Header';
-import './styles/App.css';
-import Navbar from './components/Navbar';
+import { BrowserRouter } from 'react-router-dom';
 import { ModalContext } from './context';
+import './styles/App.css';
+import Header from './components/Header';
+import Navbar from './components/Navbar';
+import AppRouter from './components/AppRouter';
 
 function App() {
 
@@ -15,21 +14,17 @@ function App() {
     <ModalContext.Provider value={{
       modal, setModal
     }}>
-    <BrowserRouter>
-    <div className="App">
+      <BrowserRouter>
+        <div className="App">
 
-      <Header />
+          <Header />
 
-      <Navbar />
-      
-      <Routes className='App-body'>
-        <Route path="/posts" element = { <Posts /> }/>
-        <Route path="/about" element = { <About/> }/>
-        <Route path="*" element = { <Navigate replace to="/posts" /> }/>
-      </Routes>
-    
-    </div>
-    </BrowserRouter>
+          <Navbar />
+          
+          <AppRouter />
+        
+        </div>
+      </BrowserRouter>
     </ModalContext.Provider>
   )  
 }
