@@ -19,7 +19,7 @@ const PostList = ({ posts, highlight, deletePost }) => {
 						classNames = "post"
 					>
 						<PostItem 
-							number = { index + 1 } 
+							// number = { index + 1 } 
 							post = { post }
 							highlight = { highlight }
 							deletePost = { deletePost } 

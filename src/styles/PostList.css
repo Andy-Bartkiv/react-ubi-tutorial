@@ -8,7 +8,7 @@
 .post {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   padding: .25em;
   border: 0.1em solid teal;
   border-radius: .25em;
@@ -23,6 +23,13 @@
 .highlighter {
   background-color: orange;
   color: #282c44;
+}
+
+.post_btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 /* React Group Transitions */

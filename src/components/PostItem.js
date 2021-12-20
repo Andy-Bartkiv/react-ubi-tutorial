@@ -1,8 +1,12 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom'; 
 import MyButton from "./UI/button/MyButton";
 import Highlighter from "react-highlight-words";
 
-const PostItem = ( {number, post, highlight, deletePost} ) => {
+const PostItem = ({ post, highlight, deletePost }) => {
+
+  const navigate = useNavigate();
+
   return (
 		<div className = 'post'>
 			<div className = 'post_content'>
@@ -23,10 +27,11 @@ const PostItem = ( {number, post, highlight, deletePost} ) => {
   				/>
 			</div>
 			<div className = 'post_btns'>
-				<MyButton 
-					onClick = { () => deletePost(post) }
-				>
-					Del
+				<MyButton onClick={ () => deletePost(post) } style={{ padding: '.25em .5em' }}>
+					X
+				</MyButton>
+				<MyButton onClick = { () => navigate(`/posts/${post.id}`) }>
+					Open
 				</MyButton>
 			</div>
 		</div>
