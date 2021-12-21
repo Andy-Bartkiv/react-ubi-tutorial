@@ -9,16 +9,17 @@ import { useFetch } from "../hooks/useFetch";
 import PostService from "../API/PostService";
 import Pagination from "../components/UI/pagination/Pagination";
 import { getPagesQty } from "../utils/pages";
-import { ModalContext } from "../context";
+import { AuthContext, ModalContext } from "../context";
 
 function Posts() {
+
+  const {page, setPage} = useContext(AuthContext);
   
   const {modal, setModal} = useContext(ModalContext);
   const [posts, setPosts] = useState([]);
   const [filter, setFilter] = useState( {sort: '', search: ''} );
   const [totalPages, setTotalPages] = useState(0);
   const [limit, setLimit] = useState(10);
-  const [page, setPage] = useState(1);
 
   const [fetchPosts, isPostsLoading, loadingError] = useFetch( async () => {
       const resonse = await PostService.getAll(limit, page);

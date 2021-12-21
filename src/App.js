@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { ModalContext } from './context';
+import { AuthContext, ModalContext } from './context';
 import './styles/App.css';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
@@ -9,11 +9,20 @@ import AppRouter from './components/AppRouter';
 function App() {
 
   const [modal, setModal] = useState(false);
+  const [isAuth, setIsAuth] = useState(false);
+  const [authInProgress, setAuthInProgress] = useState(true);
+  const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    if (localStorage.getItem('userAuth')) setIsAuth(true);
+    setTimeout( () => 
+      setAuthInProgress(false), 
+    500);
+  }, [])
 
   return (
-    <ModalContext.Provider value={{
-      modal, setModal
-    }}>
+    <AuthContext.Provider value={{ isAuth, setIsAuth, authInProgress, page, setPage }}>
+    <ModalContext.Provider value={{ modal, setModal }}>
       <BrowserRouter>
         <div className="App">
 
@@ -26,6 +35,7 @@ function App() {
         </div>
       </BrowserRouter>
     </ModalContext.Provider>
+    </AuthContext.Provider>
   )  
 }
 

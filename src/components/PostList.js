@@ -12,14 +12,13 @@ const PostList = ({ posts, highlight, deletePost }) => {
 		<div>
 			<h3>{ listTitle }</h3>
 			<TransitionGroup className = 'post_list'>
-				{ posts.map((post, index) => (
+				{ posts.map((post) => (
 					<CSSTransition
 						key = { post.id } 
 						timeout = { 500 }
 						classNames = "post"
 					>
 						<PostItem 
-							// number = { index + 1 } 
 							post = { post }
 							highlight = { highlight }
 							deletePost = { deletePost } 

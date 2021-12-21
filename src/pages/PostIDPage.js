@@ -15,7 +15,6 @@ const PostIDPage = () => {
     });
     const [fetchCommentsByID, isComentsLoading, errorComments] = useFetch( async (id) => {
         const resp = await PostService.getCommentsByID(id);
-        await console.log(resp);
         setComments(resp.data);
     });
 
@@ -31,7 +30,7 @@ const PostIDPage = () => {
             { (isLoading)
                 ? <Loader />
                 : <div>
-                    <h3> { post.id}. { post.title }</h3>
+                    <h3>{ post.title }</h3>
                     <hr style={{ border: 'none', margin: '.25em 0', height: '.05em', background: 'whitesmoke' }}/>
                     <p>{ post.body }</p>
                   </div>
@@ -43,7 +42,7 @@ const PostIDPage = () => {
                 ? <Loader />
                 : <ol style={{ padding: '.25em 1em'}}>
                     { comments.map(cmnt =>
-                        <li>
+                        <li key={cmnt.id}>
                             <h5>{cmnt.email}:</h5>
                             <p>{cmnt.name}</p>
                         </li>

@@ -15,10 +15,18 @@
   font-size: smaller;
 }
 
+.post_body {
+  font-size: .9em;
+}
+
 .post_title {
   font-weight: bold;
   text-decoration: underline;
+  cursor: pointer;
+  color: #088;
 }
+
+.post_title:hover { color: orange; }
 
 .highlighter {
   background-color: orange;

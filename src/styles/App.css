@@ -64,19 +64,25 @@ body {
   text-decoration: none;
 }
 
+.App-navbar div {
+  display: block;
+  color: var(--prm-color);
+  text-align: center;
+  padding: .25em 1em;
+  /* text-decoration: none; */
+}
+
+.App-navbar li.post_id { flex: 1 0 0px }
+.App-navbar li.post_id:hover { --prm-color: teal; }
+
 .App-navbar li:hover {
   --prm-color: orange;
   width: 1.1;
-  /* color: #088; */
-  /* background: linear-gradient(#ffa50000, #ffa50022); */
 }
 
 .App-navbar .active {
-  /* --prm-color: orange; */
   width: 80%;
   background-color: #282c44;
-  /* border-bottom: .1em solid var(--prm-color); */
-  /* text-shadow: 0 0 .5em var(--prm-color); */
 }
 
 .App-body {

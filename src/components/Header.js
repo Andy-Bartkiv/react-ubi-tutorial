@@ -14,6 +14,7 @@ const Header = () => {
 
     return (
         <div className='App-header'>
+        
             <MyButton
                 style = {{ marginLeft: '1em', fontSize: '.75em', 
                     zIndex: btnVisible.z, opacity: btnVisible.op, transition: '.25s' }} 
@@ -22,7 +23,9 @@ const Header = () => {
             </MyButton>
             
             <h2>React UlbiTV Tutorial</h2>
+
             <Clock />
+        
         </div>
     )
 }
