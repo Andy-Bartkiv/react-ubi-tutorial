@@ -14,21 +14,23 @@ import { AuthContext, ModalContext } from "../context";
 function Posts() {
 
   const {page, setPage} = useContext(AuthContext);
-  
+  const {limit, setLimit} = useContext(AuthContext);
   const {modal, setModal} = useContext(ModalContext);
+
   const [posts, setPosts] = useState([]);
   const [filter, setFilter] = useState( {sort: '', search: ''} );
   const [totalPages, setTotalPages] = useState(0);
-  const [limit, setLimit] = useState(10);
 
   const [fetchPosts, isPostsLoading, loadingError] = useFetch( async () => {
-      const resonse = await PostService.getAll(limit, page);
-      setPosts(resonse.data);
-      setTotalPages(getPagesQty(resonse.headers['x-total-count'], limit));
+      const resp = await PostService.getAll(limit, page);
+      setPosts(resp.data);
+      setTotalPages(getPagesQty(resp.headers['x-total-count'], limit));
   });
 
-  useEffect( () => fetchPosts(), [page]);
+  useEffect( () => fetchPosts(), [page, limit] );
   
+  const changePage = (p) => setPage(p);
+
   const addPostFromForm = (newPost) => {
     setPosts([...posts, newPost]);
     setModal(false);
@@ -41,10 +43,6 @@ function Posts() {
   
   // filter and sort
   const sortedAndSearchedPosts = usePosts(posts, filter);
-
-  const changePage = (p) => {
-    setPage(p);
-  }
 
   return (  
     <div className="App-body">

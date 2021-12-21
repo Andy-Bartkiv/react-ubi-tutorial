@@ -12,6 +12,7 @@ function App() {
   const [isAuth, setIsAuth] = useState(false);
   const [authInProgress, setAuthInProgress] = useState(true);
   const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(10);
 
   useEffect(() => {
     if (localStorage.getItem('userAuth')) setIsAuth(true);
@@ -21,7 +22,7 @@ function App() {
   }, [])
 
   return (
-    <AuthContext.Provider value={{ isAuth, setIsAuth, authInProgress, page, setPage }}>
+    <AuthContext.Provider value={{ isAuth, setIsAuth, authInProgress, page, setPage, limit, setLimit }}>
     <ModalContext.Provider value={{ modal, setModal }}>
       <BrowserRouter>
         <div className="App">
