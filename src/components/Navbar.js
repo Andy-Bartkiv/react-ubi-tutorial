@@ -5,12 +5,13 @@ import { AuthContext } from "../context";
 const Navbar = () => {
     
     const active = useLocation().pathname;
-    const { setIsAuth, setPage } = useContext(AuthContext);
+    const { setIsAuth, setPage, setLimit } = useContext(AuthContext);
     const postID = active.slice(7);
 
     const logoutUser = () => {
         setIsAuth(false);
         setPage(1);
+        setLimit(10);
         localStorage.removeItem('userAuth');
     }
     

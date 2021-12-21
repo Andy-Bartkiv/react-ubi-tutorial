@@ -13,8 +13,7 @@ import { AuthContext, ModalContext } from "../context";
 
 function Posts() {
 
-  const {page, setPage} = useContext(AuthContext);
-  const {limit, setLimit} = useContext(AuthContext);
+  const {page, setPage, limit} = useContext(AuthContext);
   const {modal, setModal} = useContext(ModalContext);
 
   const [posts, setPosts] = useState([]);

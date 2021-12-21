@@ -16,15 +16,15 @@ const AppRouter = () => {
     return (
         (isAuth)
         ? <Routes className='App-body'>
-            <Route path="posts" element = { <Posts /> }/>
-            <Route path="posts/:id" element = { <PostIDPage /> }/>
-            <Route path="about" element = { <About/> }/>
-            <Route path="*" element = { <Navigate replace to="posts" /> }/>
+            <Route path="/posts" element = { <Posts /> }/>
+            <Route path="/posts/:id" element = { <PostIDPage /> }/>
+            <Route path="/about" element = { <About/> }/>
+            <Route path="/*" element = { <Navigate replace to="/posts" /> }/>
         </Routes>
 
         : <Routes className='App-body'>
-            <Route path="login" element = { <Login /> }/>
-            <Route path="*" element = { <Navigate replace to="login" /> }/>
+            <Route path="/login" element = { <Login /> }/>
+            <Route path="/*" element = { <Navigate replace to="/login" /> }/>
         </Routes>
     )
 }
