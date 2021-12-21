@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/react-ubi-tutorial/static/css/main.c34c1808.chunk.css",
-    "main.js": "/react-ubi-tutorial/static/js/main.505dd643.chunk.js",
-    "main.js.map": "/react-ubi-tutorial/static/js/main.505dd643.chunk.js.map",
+    "main.js": "/react-ubi-tutorial/static/js/main.f23a0aa1.chunk.js",
+    "main.js.map": "/react-ubi-tutorial/static/js/main.f23a0aa1.chunk.js.map",
     "runtime-main.js": "/react-ubi-tutorial/static/js/runtime-main.41151517.js",
     "runtime-main.js.map": "/react-ubi-tutorial/static/js/runtime-main.41151517.js.map",
-    "static/js/2.6fb7af54.chunk.js": "/react-ubi-tutorial/static/js/2.6fb7af54.chunk.js",
-    "static/js/2.6fb7af54.chunk.js.map": "/react-ubi-tutorial/static/js/2.6fb7af54.chunk.js.map",
+    "static/js/2.dec98732.chunk.js": "/react-ubi-tutorial/static/js/2.dec98732.chunk.js",
+    "static/js/2.dec98732.chunk.js.map": "/react-ubi-tutorial/static/js/2.dec98732.chunk.js.map",
     "index.html": "/react-ubi-tutorial/index.html",
     "static/css/main.c34c1808.chunk.css.map": "/react-ubi-tutorial/static/css/main.c34c1808.chunk.css.map",
-    "static/js/2.6fb7af54.chunk.js.LICENSE.txt": "/react-ubi-tutorial/static/js/2.6fb7af54.chunk.js.LICENSE.txt"
+    "static/js/2.dec98732.chunk.js.LICENSE.txt": "/react-ubi-tutorial/static/js/2.dec98732.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.41151517.js",
-    "static/js/2.6fb7af54.chunk.js",
+    "static/js/2.dec98732.chunk.js",
     "static/css/main.c34c1808.chunk.css",
-    "static/js/main.505dd643.chunk.js"
+    "static/js/main.f23a0aa1.chunk.js"
   ]
 }
