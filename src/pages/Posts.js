@@ -1,19 +1,19 @@
 import { useEffect, useState, useContext } from "react";
+import { usePosts } from "../hooks/usePost";
+import { useFetch } from "../hooks/useFetch";
 import Loader from "../components/UI/loader/Loader";
+import MyModal from "../components/UI/modal/MyModal"
+import Pagination from "../components/UI/pagination/Pagination";
 import PostList from "../components/PostList";
 import PostForm from "../components/PostForm";
 import PostFilter from "../components/PostFilter";
-import MyModal from "../components/UI/modal/MyModal"
-import { usePosts } from "../hooks/usePost";
-import { useFetch } from "../hooks/useFetch";
 import PostService from "../API/PostService";
-import Pagination from "../components/UI/pagination/Pagination";
 import { getPagesQty } from "../utils/pages";
 import { AuthContext, ModalContext } from "../context";
 
 function Posts() {
 
-  const {page, setPage, limit, setLimit} = useContext(AuthContext);
+  const {page, setPage, limit} = useContext(AuthContext);
   const {modal, setModal} = useContext(ModalContext);
 
   const [posts, setPosts] = useState([]);

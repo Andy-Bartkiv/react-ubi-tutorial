@@ -29,21 +29,20 @@ const PostIDPage = () => {
             <br/>
             { (isLoading)
                 ? <Loader />
-                : <div>
+                : <div className='post' style={{ flexDirection: 'column', gap: '0.125em'}}>
                     <h3>{ post.title }</h3>
-                    <hr style={{ border: 'none', margin: '.25em 0', height: '.05em', background: 'whitesmoke' }}/>
+                    <hr style={{ border: 'none', margin: '.25em 0', height: '.05em', background: 'teal' }}/>
                     <p>{ post.body }</p>
                   </div>
             }
-            <br/>
-            <h4>Comments:</h4>
         
             { (isComentsLoading)
-                ? <Loader />
-                : <ol style={{ padding: '.25em 1em'}}>
+                ? <h5 style={{ textAlign: 'center', color: 'teal' }}>Loading comments...</h5>
+                : <ol className='post_list' style={{ flexDirection: 'column', padding: '0 1em', gap: '0.25em'}}>
+                    <h5 style={{ textAlign: 'center' }}>Comments:</h5>
                     { comments.map(cmnt =>
-                        <li key={cmnt.id}>
-                            <h5>{cmnt.email}:</h5>
+                        <li className='post' key={cmnt.id} style={{ flexDirection: 'column' }}>
+                            <h5 style={{ color: 'teal'}}>{cmnt.email}:</h5>
                             <p>{cmnt.name}</p>
                         </li>
                     )}
