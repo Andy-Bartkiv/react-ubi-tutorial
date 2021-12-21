@@ -7,7 +7,7 @@ const PostFilter = ({ filter, setFilter }) => {
 
   const scrollLimit = 11;
 
-  const { setPage, limit, setLimit, scroll, setScroll } = useContext(AuthContext);
+  const { setPage, limit, setLimit, setScroll } = useContext(AuthContext);
 
   const changeLimit = (val) => {
 	setPage(1);

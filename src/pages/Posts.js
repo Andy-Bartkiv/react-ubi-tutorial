@@ -15,7 +15,7 @@ import ScrollToTop from "react-scroll-to-top";
 
 function Posts() {
   
-  const {page, setPage, limit, scroll, setScroll} = useContext(AuthContext);
+  const {page, setPage, limit, scroll} = useContext(AuthContext);
   const {modal, setModal} = useContext(ModalContext);
   
   const [posts, setPosts] = useState([]);
