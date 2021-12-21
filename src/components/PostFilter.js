@@ -1,4 +1,4 @@
-import { useContext } from "react/cjs/react.development";
+import { useContext } from "react";
 import { AuthContext } from "../context";
 import MyInput from "./UI/input/MyInput";
 import MySelect from "./UI/select/MySelect";
@@ -9,7 +9,7 @@ const PostFilter = ({ filter, setFilter }) => {
 
   const changeLimit = (val) => {
 	setPage(1);
-	setLimit(val);
+	setLimit(+val);
   }
 
   return (
@@ -30,7 +30,7 @@ const PostFilter = ({ filter, setFilter }) => {
 			/>
 			<MySelect 
 				value = { limit }
-				onChange = { (val) => changeLimit(val) }
+				onChange = { (value) => changeLimit(value) }
 				defaultValue = "Posts on page:"
 				options = {[
 					{ value: 5, name: '5' },

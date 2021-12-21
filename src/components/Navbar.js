@@ -1,4 +1,4 @@
-import { Link, useLocation, useParams } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { useContext } from "react";
 import { AuthContext } from "../context";
 
@@ -17,9 +17,10 @@ const Navbar = () => {
     
     return (
         <>
-        { (active !== '/login') &&
+        { (active != '/login') &&
             <ul className='App-navbar'>
-                <li onClick={ logoutUser }><Link to={ '/login' }>Logout</Link></li>
+                {/* <li onClick={ logoutUser }><Link to={ '/login' }>Logout</Link></li> */}
+                <li onClick={ logoutUser }><div style={{ cursor: 'pointer' }}>Logout</div></li>
                 <div style={{ flex: '1 1 0', padding: '0' }}></div>
                 {postID != '' && <li className="post_id active"><div>ID: { postID }</div></li>}
                 <li className={(active === '/posts') ? 'active' : '' }><Link to={ '/posts' }>Posts</Link></li>
