@@ -11,7 +11,7 @@ const AppRouter = () => {
     const { isAuth, authInProgress } = useContext(AuthContext);
     
     if (authInProgress)
-        return ( <h3 className="App-body">Authorization in Progress...</h3>)
+        return ( <h3 className="App-body"><br/>Authorization in Progress...</h3>)
 
     return (
         (isAuth)

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { AuthContext, ModalContext } from './context';
 import './styles/App.css';
 import Header from './components/Header';
@@ -24,7 +24,8 @@ function App() {
   return (
     <AuthContext.Provider value={{ isAuth, setIsAuth, authInProgress, page, setPage, limit, setLimit }}>
     <ModalContext.Provider value={{ modal, setModal }}>
-      <BrowserRouter>
+    <HashRouter>{/* <BrowserRouter> */}
+      
         <div className="App">
 
           <Header />
@@ -34,7 +35,7 @@ function App() {
           <AppRouter />
         
         </div>
-      </BrowserRouter>
+      </HashRouter>
     </ModalContext.Provider>
     </AuthContext.Provider>
   )  
