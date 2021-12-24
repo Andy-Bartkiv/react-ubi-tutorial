@@ -41,10 +41,10 @@ function Posts() {
   });
   
   useEffect( () => {
-    if (!scroll) setPage(1);
+    if (scroll) setPage(1);
   }, [scroll])
 
-  useEffect( () => fetchPosts(), [page, limit] );
+  useEffect( () => fetchPosts(), [page, limit]);
     
   const changePage = (p) => setPage(p);
 
@@ -94,16 +94,10 @@ function Posts() {
       
       { isPostsLoading && <Loader /> }
 
-      {/* { isPostsLoading
-        ? <Loader />
-        : <PostList 
-        posts = { sortedAndSearchedPosts } 
-        highlight = { filter.search }
-        deletePost = { deletePost } 
-        />
-      } */}
-
+      {/* Empy DIV for scrolling */}
       <div ref={ bottomElement } style={{ height: '.75em' }}></div>
+
+      {/* Scroll-to-Top ARROW */}
       <ScrollToTop smooth top='200' color="orange" style={{ }}/>
     
     </div>

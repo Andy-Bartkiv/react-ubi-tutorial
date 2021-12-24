@@ -4,19 +4,15 @@ import MyInput from "./UI/input/MyInput";
 import MySelect from "./UI/select/MySelect";
 
 const PostFilter = ({ filter, setFilter }) => {
-
-  const scrollLimit = 11;
-
+	
   const { setPage, limit, setLimit, setScroll } = useContext(AuthContext);
+  
+  const scrollLimit = 11;
 
   const changeLimit = (val) => {
 	setPage(1);
 	setLimit(+val);
-	if (val != scrollLimit) {
-		setScroll(false);
-	} else {
-		setScroll(true);
-	} 
+	setScroll(val == scrollLimit); 
   }
 
   return (
